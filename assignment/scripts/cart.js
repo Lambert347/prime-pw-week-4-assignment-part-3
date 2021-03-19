@@ -2,10 +2,16 @@ console.log('***** Cart Functions *****');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 let basket = [];
+const maxItems = 5;
+
 
 function addItem(item) {
   basket.push(item);
-  return true;
+  if (isFull() === true) {
+    console.log("Basket is full!")
+    return false;
+  }
+  return true;.
 }
 
 addItem('Bread');
@@ -20,11 +26,30 @@ function listItems() {
   }
 }
 
-function list() {
-  for (let item1 of basket) {
-    console.log(item1);
-  }
-}
+// function list() {
+//   for (let item1 of basket) {
+//     console.log(item1);
+//   }
+// }
+// list()
 
 listItems();
-list();
+
+function empty() {
+  basket = [];
+}
+
+empty();
+console.log(basket);
+
+
+//STRETCH GOOOOOOOOOOOOOOOOOOOOOAAAAALS
+
+function isFull() {
+  if (basket.length < maxItems); {
+    return false;
+  } {
+    return true;
+  }
+}
+console.log(isFull());
