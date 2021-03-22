@@ -40,7 +40,7 @@ function empty() {
 }
 
 
-//The function does empty the basket properly, the only reason that it is a comment is so that the functions below work.
+//The function does empty the basket properly, the only reason that the call is a comment is so that the functions below work with the basket array from above.
 // empty();
 console.log(basket);
 
