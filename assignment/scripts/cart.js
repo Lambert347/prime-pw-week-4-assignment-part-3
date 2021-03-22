@@ -24,36 +24,30 @@ console.log(addItem('Coffee'));
 //When checking the basket via console.log, coffee is not present because the basket is determined to be full. There are not enough spaces to stuff coffee beans in there.
 console.log(basket);
 
-
+//Function that lists each individual item present in the basket on a separate line.
 function listItems() {
   for (let i = 0; i < basket.length; i++) {
     console.log(basket[i]);
   }
 }
 
-// function list() {
-//   for (let item1 of basket) {
-//     console.log(item1);
-//   }
-// }
-// list()
 
 listItems();
 
+//Function that "empties" the basket by setting the basket array to a new, empty array.
 function empty() {
   basket = [];
 }
 
 
-function empty2(array) {
-  array.length = 0;
-}
-
+//The function does empty the basket properly, the only reason that it is a comment is so that the functions below work.
+// empty();
 console.log(basket);
 
 
-//STRETCH GOOOOOOOOOOOOOOOOOOOOOAAAAALS
+//STRETCH GOAL QUESTIONS
 
+//Function to check if the basket is full, that is if it has 5 items or more present. If so, the function returns true. If not, it returns false.
 function isFull() {
   if (basket.length >= maxItems) {
     return true;
@@ -66,11 +60,19 @@ function isFull() {
 function removeItem(item) {
   if (basket.indexOf(item) === -1) {
     return null;
+    console.log('Item not found');
   }
   //If the item in the argument is present, then the item will be removed from the array using splice.
-  basket.splice(item, 1);
+  else {
+    basket.splice(item, 1);
+    return item;
+  }
 }
 
 //Function takes the argument Bread to remove it from the basket, and then console logs the new basket. The basket now has no bread in it.
-removeItem('Bread');
+console.log(removeItem('Bread'));
+console.log(basket);
+
+//Function attempts to remove an item not present in the basket. Since it is not there, the function returns null.
+console.log(removeItem('Pizza'));
 console.log(basket);
